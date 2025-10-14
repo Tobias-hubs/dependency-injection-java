@@ -1,36 +1,28 @@
-## 🧪 How to Work on the Exercises
+# 🚀 Exercise 5: Dependency Injection with Java
 
-Each exercise is described in a GitHub Issue. Follow these steps to complete an exercise and submit your solution:
+## ✨ Summary
+This PR completes all three parts of Exercise 5, moving step by step from manual dependency wiring to a fully working CDI setup with Weld.
 
-### 📥 1. Clone or Fork the Repository
-```bash
-git clone https://github.com/fungover/exercise2025.git
-```
-Or fork the repository via GitHub and clone your fork.
+## 🔧 Changes by Part
+- **Part 1 – Manual Constructor Injection**
+  - Created interfaces and implementations (service + persistence layer)
+  - Manually instantiated dependencies in `Main` and verified wiring
 
-### 🌱 2. Create a Branch
-Create a new branch named using the format: your-github-username/exerciseNumber
+- **Part 2 – Minimal DI Container**
+  - Implemented a simple reflection-based container
+  - Container recursively resolved constructor dependencies
+  - Demonstrated automatic creation of the full dependency graph
 
-Example for user githubuser working on Exercise 1:
+- **Part 3 – Using Weld (CDI)**
+  - Added `weld-se-core` dependency and `beans.xml`
+  - Annotated implementation classes with `@ApplicationScoped` and `@Inject`
+  - Refactored `App.java` to start Weld and retrieve the top-level service
+  - Verified correct behavior with CDI-managed injection
 
-```bash
-git checkout -b githubuser/exercise1
-```
+## ✅ Result
+- All three approaches (manual, custom container, Weld) produce the same functional output
+- Weld now handles dependency injection automatically
+- Console output confirms services and repositories are wired correctly
 
-### 🛠️ 3. Implement Your Solution
-Follow the instructions in the corresponding issue. If anything is unclear, ask questions by commenting directly on the issue.
-
-### 🚀 4. Push Your Branch
-```bash
-git push origin githubuser/exercise1
-```
-
-### 📬 5. Create a Pull Request
-Open a Pull Request (PR) from your branch.
-
-Link the PR to the issue you're solving.
-
-Include a clear description of your solution.
-
-### 💬 6. Feedback and Iteration
-Reviewers may leave comments or suggestions. Update your branch and push changes until the PR is approved.
+## Linked School Issue 
+[Exercise 5 - Dependency Injection](https://github.com/fungover/exercise2025/issues/95)
